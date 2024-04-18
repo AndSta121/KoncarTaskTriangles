@@ -1,0 +1,30 @@
+﻿
+@model KoncarTaskTriangles.Models.ViewModels.TriangleViewModel
+
+@{
+    
+}
+<head>
+    <link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
+</head>
+@{
+   
+}
+@using (Html.BeginForm("Add", "Triangle", new { userId = ViewBag.userId }, FormMethod.Post))
+{
+    <div class="login-page">
+        <div class="form">
+            <p style="text-align:left">A</p>
+            <input type="number" placeholder="A:X coordinate" asp-for="Ax" />
+            <input type="number" placeholder="A:Y coordinate" asp-for="Ay" />
+            <p style="text-align:left">B</p>
+            <input type="number" placeholder="B:X coordinate" asp-for="Bx" />
+            <input type="number" placeholder="B:Y coordinate" asp-for="By" />
+            <p style="text-align:left">C</p>
+            <input type="number" placeholder="C:X coordinate" asp-for="Cx" />
+            <input type="number" placeholder="C:Y coordinate" asp-for="Cy" />
+            <p class="message">@Html.ValidationSummary()</p>
+            <button>create</button>
+        </div>
+    </div>
+}

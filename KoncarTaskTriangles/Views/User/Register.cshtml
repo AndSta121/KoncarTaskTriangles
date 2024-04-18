@@ -1,0 +1,23 @@
+﻿@model KoncarTaskTriangles.Models.ViewModels.RegisterViewModel
+
+@{
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
+</head>
+
+@using (Html.BeginForm("Register", "User", FormMethod.Post, new { autocomplete = "off" }))
+{
+    <div class="login-page">
+        <div class="form">
+            <input type="text" placeholder="username" asp-for="Username" />
+            <input type="password" placeholder="password" asp-for="Password" />
+            <input type="text" placeholder="first name" asp-for="FirstName" />
+            <input type="text" placeholder="last name" asp-for="LastName" />
+            <p class="message">@Html.ValidationSummary()</p>
+            <button>create</button>
+            <p class="message">Already registered? <a href="@Url.Action("Login", "User")">Sign In</a></p>
+        </div>
+    </div>
+}
